@@ -58,35 +58,35 @@ function Sales() {
   const [selected, setSelected] = useState({});
   const [yearSelected, setYearSelected] = useState(years[0]);
 
-  return (
-    <>
-      {isLoading ? (
-        <div className="flex justify-center mt-6">
-          <div
-            className="w-16 h-16 border-8 border-green-400 rounded-full border-solid animate-spin"
-            style={{ borderTop: "8px solid transparent" }}
-          />
-        </div>
-      ) : (
-        <>
-          <div className="flex flex-row-reverse p-4">
-            <YearPicker
-              selected={[yearSelected, setYearSelected]}
-              years={years}
-            />
-            <HomestayPicker
-              homestayList={homestayList}
-              selected={[selected, setSelected]}
-            />
-          </div>
-          <HomestayChart
-            selected={[selected, yearSelected]}
-            setIsLoading={setIsLoading}
-          />
-        </>
-      )}
-    </>
-  );
+//   return (
+//     <>
+//       {isLoading ? (
+//         <div className="flex justify-center mt-6">
+//           <div
+//             className="w-16 h-16 border-8 border-green-400 rounded-full border-solid animate-spin"
+//             style={{ borderTop: "8px solid transparent" }}
+//           />
+//         </div>
+//       ) : (
+//         <>
+//           <div className="flex flex-row-reverse p-4">
+//             <YearPicker
+//               selected={[yearSelected, setYearSelected]}
+//               years={years}
+//             />
+//             <HomestayPicker
+//               homestayList={homestayList}
+//               selected={[selected, setSelected]}
+//             />
+//           </div>
+//           <HomestayChart
+//             selected={[selected, yearSelected]}
+//             setIsLoading={setIsLoading}
+//           />
+//         </>
+//       )}
+//     </>
+//   );
 }
 
 export default Sales;
