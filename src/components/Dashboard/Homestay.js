@@ -54,46 +54,46 @@ function Homestay() {
   }, [currentPage, perPage, reload])
 
   const paginate = pageNumber => setCurrentPage(pageNumber);
-//   return (
-//     <div>
-//       {role === "super_admin" ? (<div>
-//         <button
-//           className="
-//                 mx-2 my-2 px-3 py-2
-//                 border-2 border-gray-200 
-//                 rounded-lg
-//                 text-sm
-//                 transition duration-150 ease-in-out 
-//                 hover:border-gray-300"
-//           onClick={() => setIsOpen(true)}
-//         >
-//           + Thêm Homestay
-//         </button>
-//         <Modal openProps={[isOpen, setIsOpen]} reload={[reload, setReload]} />
-//       </div>) : null}
+  return (
+    <div>
+      {role === "super_admin" ? (<div>
+        <button
+          className="
+                mx-2 my-2 px-3 py-2
+                border-2 border-gray-200 
+                rounded-lg
+                text-sm
+                transition duration-150 ease-in-out 
+                hover:border-gray-300"
+          onClick={() => setIsOpen(true)}
+        >
+          + Thêm Homestay
+        </button>
+        <Modal openProps={[isOpen, setIsOpen]} reload={[reload, setReload]} />
+      </div>) : null}
 
-//       {isLoading ? (
-//         <div className="flex justify-center mt-6">
-//           <div
-//             className="w-16 h-16 border-8 border-green-400 rounded-full border-solid animate-spin"
-//             style={{ borderTop: "8px solid transparent" }}
-//           />
-//         </div>
-//       ) : (
-//         <div className='pb-10'>
-//           <HomestayTable
-//             homestaysProps={[homestays, setHomestays]}
-//             reload={[reload, setReload]}
-//           />
-//           <Pagination
-//             totalPage={totalPage}
-//             paginate={paginate}
-//           />
-//           <p className="text-center text-green-800"> Page {currentPage} of {totalPage} </p>
-//         </div>
-//       )}
-//     </div>
-//   )
+      {isLoading ? (
+        <div className="flex justify-center mt-6">
+          <div
+            className="w-16 h-16 border-8 border-green-400 rounded-full border-solid animate-spin"
+            style={{ borderTop: "8px solid transparent" }}
+          />
+        </div>
+      ) : (
+        <div className='pb-10'>
+          <HomestayTable
+            homestaysProps={[homestays, setHomestays]}
+            reload={[reload, setReload]}
+          />
+          <Pagination
+            totalPage={totalPage}
+            paginate={paginate}
+          />
+          <p className="text-center text-green-800"> Page {currentPage} of {totalPage} </p>
+        </div>
+      )}
+    </div>
+  )
 
 }
 
