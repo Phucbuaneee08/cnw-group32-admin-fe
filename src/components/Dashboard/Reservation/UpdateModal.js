@@ -2,7 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/solid";
 import { Fragment } from "react";
 import UserData from "./Modal/UserData";
-import DatetimeData from "./Modal/DatetimeData";
+import DatetimeData from "./Modal/DateTimeData";
 import ServiceData from "./Modal/ServiceData";
 import axios from "axios";
 import { toast } from "react-toastify";
