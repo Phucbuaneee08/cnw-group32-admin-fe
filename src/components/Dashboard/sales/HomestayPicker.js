@@ -32,7 +32,43 @@ function HomestayPicker(props) {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
               >
-                
+                <Listbox.Options className="absolute z-10 mt-1 w-full bg-white shadow-lg h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
+                  {homestayList.map((person) => (
+                    <Listbox.Option
+                      key={person.id}
+                      className={({ active }) =>
+                        `cursor-default select-none relative py-2 pl-3 pr-9 ${
+                          active ? "text-white bg-indigo-600" : "text-gray-900"
+                        }`
+                      }
+                      value={person}
+                    >
+                      {({ selected, active }) => (
+                        <>
+                          <span
+                            className={`ml-3 block truncate ${
+                              selected ? "font-semibold" : "font-normal"
+                            }`}
+                          >
+                            {person.name}
+                          </span>
+                          {selected ? (
+                            <span
+                              className={`absolute inset-y-0 right-0 flex items-center pr-4 ${
+                                active ? "text-white" : "text-indigo-600"
+                              }`}
+                            >
+                              <CheckIcon
+                                className="h-5 w-5"
+                                aria-hidden="true"
+                              />
+                            </span>
+                          ) : null}
+                        </>
+                      )}
+                    </Listbox.Option>
+                  ))}
+                </Listbox.Options>
               </Transition>
             </div>
           </>
