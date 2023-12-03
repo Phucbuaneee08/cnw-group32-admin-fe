@@ -35,6 +35,26 @@ const HomestayChart = (props) => {
     /* Get homestay revenue */
     useEffect(() => {
       setIsLoading(true);
+      axios({
+        method: "GET",
+        url: "http://localhost:8000/super-admins/revenue/homestay",
+        params: {
+          year: year,
+          homestayId: homestay.id,
+        },
+      })
+        .then((res) => {
+          const tempData = data.map((item, index) => ({
+            ...item,
+            uv: res.data.content.revenuePerMonth[index + 1],
+          }));
+          setData(tempData);
+          setIsLoading(false);
+        })
+        .catch((err) => {
+          toast(err.message, { type: toast.TYPE.ERROR });
+          setIsLoading(false);
+        });
     }, [homestay, year]);
   
     return (
